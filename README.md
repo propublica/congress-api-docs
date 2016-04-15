@@ -1,2 +1,3 @@
-# congress-api-docs
-Documentation for Congress API
+# ProPublica Congress API Documentation
+
+Documentation for Congress API.
