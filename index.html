@@ -146,7 +146,7 @@
 <li>The official Web site of the <a href="http://clerk.house.gov/legislative/legvotes.html">Office of the Clerk of the U.S. House of Representatives</a>, for vote data</li>
 <li>The official Web site of the <a href="http://www.senate.gov/pagelayout/legislative/a_three_sections_with_teasers/votes.htm">United States Senate</a>, for vote data</li>
 <li>The <a href="http://bioguide.congress.gov/biosearch/biosearch.asp">Biographical Directory of the United States Congress</a>, for member biographical information</li>
-<li><a href="https://github.com/unitedstates/congress-legislators">the @unitedstates project</a>, for social media account names in member lists and some member biographical information</li>
+<li>UnitedStates.io, for social media account names in member lists and some member biographical information</li>
 <li>MIT Professor Charles Stewart&rsquo;s collection of <a href="http://web.mit.edu/17.251/www/data_page.html">Congressional data</a>, for some role information</li>
 <li><a href="https://www.congress.gov/">Congress.gov</a> (The Library of Congress) and the <a href="https://www.gpo.gov/fdsys/bulkdata/BILLSUM">Government Printing Office</a>, for bill data and nomination data</li>
 </ul>
@@ -1022,7 +1022,9 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.propublica.org/congress/v1/members/{chamber}/{state}/current.json</code></p>
+<p><code class="prettyprint">GET https://api.propublica.org/congress/v1/members/{chamber}/{state}/current.json</code> (Senate requests)</p>
+
+<p><code class="prettyprint">GET https://api.propublica.org/congress/v1/members/{chamber}/{state}/{district}/current.json</code> (House requests)</p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -4467,7 +4469,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </tbody></table>
 
 <h2 id="get-a-specific-bill">Get a Specific Bill</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.propublica.org/congress/v1/114/bills/hr4881.json"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.propublica.org/congress/v1/115/bills/hr21.json"</span>
   -H <span class="s2">"X-API-Key: PROPUBLICA_API_KEY"</span>
 </code></pre>
 
@@ -4475,41 +4477,145 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copyright (c) 2016 Pro Publica Inc. All Rights Reserved."</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"congress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"114"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"bill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H.R.4881"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"bill_uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.propublica.org/congress/v1/114/bills/hr4881.json"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Healthy Food Choices Act of 2016"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sponsor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Phil Roe"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sponsor_uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.propublica.org/congress/v1/members/R000582.json"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"gpo_pdf_uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.congress.gov/114/bills/hr4881/BILLS-114hr4881ih.pdf"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"introduced_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-23"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"cosponsors"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"committees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"House Agriculture Committee"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"latest_major_action_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-31"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"latest_major_action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Referred to the Subcommittee on Nutrition."</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"house_passage_vote"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"senate_passage_vote"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"versions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-      </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-31 00:00:00 UTC"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Referred to the Subcommittee on Nutrition."</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-23 00:00:00 UTC"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Referred to the House Committee on Agriculture."</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+   </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"copyright"</span><span class="p">:</span><span class="s2">"Copyright (c) 2017 ProPublica Inc. All Rights Reserved."</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"results"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"congress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"115"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"bill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H.R.21"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"bill_uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.propublica.org/congress/v1/115/bills/hr21.json"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Midnight Rules Relief Act of 2017"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"sponsor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Darrell Issa"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"sponsor_uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.propublica.org/congress/v1/members/I000056.json"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"gpo_pdf_uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gpo.gov/fdsys/pkg/BILLS-115hr21rfs/pdf/BILLS-115hr21rfs.pdf"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"introduced_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-03"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"cosponsors"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"primary_subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Government Operations and Politics"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"committees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"House Homeland Security and Governmental Affairs Committee"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"latest_major_action_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-05"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"latest_major_action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs."</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"house_passage_vote"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"senate_passage_vote"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"versions"</span><span class="p">:[</span><span class="w">
+</span><span class="p">],</span><span class="w">
+         </span><span class="nt">"actions"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-05 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs."</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Motion to reconsider laid on the table Agreed to without objection."</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"On passage Passed by recorded vote: 238 - 184 (Roll no. 8)."</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"On motion to recommit with instructions Failed by the Yeas and Nays: 183 - 236 (Roll no. 7)."</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Considered as unfinished business."</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POSTPONED PROCEEDINGS - At the conclusion of debate on the Castor (FL) motion to recommit, the Chair put the question on adoption of the motion to recommit and by voice vote, announced that the noes had prevailed. Ms. Castor (FL) demanded the yeas and nays and the Chair postponed further proceedings on adoption of the motion to recommit until a time to be announced."</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The previous question on the motion to recommit with instructions was ordered without objection."</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBATE - The House proceeded with 10 minutes of debate on the Castor (FL) motion to recommit with instructions. The instructions contained in the motion seek to require the bill to be reported back to the House with an amendment to add at the end of the bill a section 3 pertaining to exception for certain rules that prohibit discrimination by insurance issuers on the basis of gender or preexisting condition or that make healthcare more affordable for working Americans."</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ms. Castor (FL) moved to recommit with instructions to the Committee on the Judiciary."</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The previous question was ordered pursuant to the rule."</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBATE - The House proceeded with one hour of debate on H.R. 21."</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The rule provides for one hour of debate and one motion to recommit."</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Considered under the provisions of rule H. Res. 5."</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"On passage Passed by recorded vote: 238 - 184 (Roll no. 8). (text: CR H74)"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Considered as unfinished business. (consideration: CR H86-87)"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ms. Castor (FL) moved to recommit with instructions to the Committee on the Judiciary. (text: CR H84)"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Considered under the provisions of rule H. Res. 5. (consideration: CR H74-78)"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Considered under the provisions of rule H. Res. 5. (consideration: CR H74-86)"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-03 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Referred to House Rules"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-03 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Referred to House Judiciary"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+           </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-03 00:00:00 UTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Referred to the Subcommittee on Regulatory Reform, Commercial And Antitrust Law."</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+         </span><span class="p">],</span><span class="w">
+         </span><span class="nt">"votes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+           </span><span class="p">{</span><span class="w">
+             </span><span class="nt">"chamber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"House"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16:48"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"roll_call"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"On Passage"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Passed"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"total_yes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"238"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"total_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"184"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"total_not_voting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.propublica.org/congress/v1/115/house/sessions/1/votes/8.json"</span><span class="w">
+           </span><span class="p">},</span><span class="w">
+           </span><span class="p">{</span><span class="w">
+             </span><span class="nt">"chamber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"House"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-04"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16:38"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"roll_call"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"On Motion to Recommit with Instructions"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failed"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"total_yes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"183"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"total_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"236"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"total_not_voting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.propublica.org/congress/v1/115/house/sessions/1/votes/7.json"</span><span class="w">
+           </span><span class="p">}</span><span class="w">
+         </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Use this request type to get details about a particular bill, including actions taken.</p>
+<p>Use this request type to get details about a particular bill, including actions taken and votes.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -5009,7 +5115,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </tbody></table>
 
 <h2 id="get-a-specific-nomination">Get a Specific Nomination</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.propublica.org/congress/v1/114/nominees/PN675.json"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.propublica.org/congress/v1/115/nominees/PN40.json"</span>
   -H <span class="s2">"X-API-Key: PROPUBLICA_API_KEY"</span>
 </code></pre>
 
@@ -5017,59 +5123,38 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copyright (c) 2016 Pro Publica Inc. All Rights Reserved."</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"congress"</span><span class="p">:</span><span class="w"> </span><span class="mi">114</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PN675"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"date_received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-21"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leonard Terry Strand, of South Dakota, to be United States District Judge for the Northern District of Iowa, vice Mark W. Bennett, retired."</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"nominee_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IA"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"committee_uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.propublica.org/congress/v1/114/senate/committees/SSJU.json"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"latest_action_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-11"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Confirmed"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-11"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"By unanimous consent agreement, debate and vote 2/11/2016."</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-11"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Considered by Senate."</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-11"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Confirmed by the Senate by Yea-Nay Vote. 93 - 0. Record Vote Number: 23."</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-15"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"By unanimous consent agreement, debate and vote at a time to be determined."</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-05"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reported by Senator Grassley, Committee on the Judiciary, without printed report."</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-05"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Placed on Senate Executive Calendar. Calendar No. 361."</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-05"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Committee on the Judiciary. Ordered to be reported favorably."</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-10-21"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Committee on the Judiciary. Hearings held."</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-21"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Received in the Senate and referred to the Committee on the Judiciary."</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nt">"votes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copyright (c) 2017 ProPublica Inc. All Rights Reserved."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"congress"</span><span class="p">:</span><span class="w"> </span><span class="mi">115</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PN40"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"date_received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-20"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John F. Kelly, of Virginia, to be Secretary of Homeland Security."</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"nominee_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VA"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"committee_uri"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"latest_action_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-20"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Confirmed"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-20"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Confirmed by the Senate by Yea-Nay Vote. 88 - 11."</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-20"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Considered by Senate."</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-20"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Received in the Senate."</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="nt">"votes"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.propublica.org/congress/v1/115/senate/sessions/1/votes/30.json"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-20"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"roll_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"On the Nomination"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nomination Confirmed"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"total_yes"</span><span class="p">:</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"total_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"total_not_voting"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
