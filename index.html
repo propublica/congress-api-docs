@@ -112,7 +112,7 @@
         <ul class="toc-footer">
             <li><a href='mailto:apihelp@propublica.org'>Request an API Key</a></li>
             <li><a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
-            <li>© Copyright 2016 ProPublica Inc.</li>
+            <li>© Copyright 2017 ProPublica Inc.</li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -181,7 +181,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 
 <p><code class="prettyprint">https://api.propublica.org/congress/{version}/</code></p>
 
-<p>The current version is <code class="prettyprint">v1</code>.</p>
+<p>The current version is <code class="prettyprint">v1</code>. For requests that have a <code class="prettyprint">congress</code> parameter, the current Congress is <code class="prettyprint">115</code>.</p>
 
 <h2 id="common-parameters">Common Parameters</h2>
 
@@ -199,7 +199,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 
 <h1 id="responses">Responses</h1>
 
-<p>The API provides JSON and XML responses for every type of request, and supports JSONP callbacks. Responses that are not date-based return the first 20 results; pagination is available via an offset query string parameter using multiples of 20.</p>
+<p>The API provides JSON and XML responses for every type of request, and supports JSONP callbacks. Responses that are not date-based return the first 20 results; pagination is available via an offset query string parameter using multiples of 20 for most votes, nomination and bill requests that return more than one object.</p>
 
 <h1 id="members">Members</h1>
 
@@ -394,7 +394,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>congress</td>
-<td>102-114 for House, 80-114 for Senate</td>
+<td>102-115 for House, 80-115 for Senate</td>
 </tr>
 <tr>
 <td>chamber</td>
@@ -1704,7 +1704,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>congress</td>
-<td>111-114</td>
+<td>111-115</td>
 </tr>
 <tr>
 <td>chamber</td>
@@ -1893,7 +1893,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </tr>
 <tr>
 <td>congress</td>
-<td>102-114 for House, 101-114 for Senate</td>
+<td>102-115 for House, 101-115 for Senate</td>
 </tr>
 <tr>
 <td>chamber</td>
@@ -2145,7 +2145,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </tr>
 <tr>
 <td>congress</td>
-<td>102-114 for House, 101-114 for Senate</td>
+<td>102-115 for House, 101-115 for Senate</td>
 </tr>
 <tr>
 <td>chamber</td>
@@ -3044,7 +3044,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>congress</td>
-<td>102-114 for House, 101-114 for Senate</td>
+<td>102-115 for House, 101-115 for Senate</td>
 </tr>
 <tr>
 <td>chamber</td>
@@ -3269,7 +3269,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>congress</td>
-<td>102-114 for House, 101-114 for Senate</td>
+<td>102-115 for House, 101-115 for Senate</td>
 </tr>
 <tr>
 <td>chamber</td>
@@ -3901,7 +3901,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>congress</td>
-<td>101-114</td>
+<td>101-115</td>
 </tr>
 </tbody></table>
 
@@ -4167,7 +4167,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>congress</td>
-<td>105-114</td>
+<td>105-115</td>
 </tr>
 <tr>
 <td>chamber</td>
@@ -4631,7 +4631,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>congress</td>
-<td>105-114</td>
+<td>105-115</td>
 </tr>
 <tr>
 <td>bill-id</td>
@@ -4704,7 +4704,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>congress</td>
-<td>105-114</td>
+<td>105-115</td>
 </tr>
 <tr>
 <td>bill-id</td>
@@ -4863,7 +4863,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>congress</td>
-<td>105-114</td>
+<td>105-115</td>
 </tr>
 <tr>
 <td>bill-id</td>
@@ -5106,7 +5106,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>congress</td>
-<td>107-114</td>
+<td>107-115</td>
 </tr>
 <tr>
 <td>type</td>
@@ -5174,7 +5174,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>congress</td>
-<td>107-114</td>
+<td>107-115</td>
 </tr>
 <tr>
 <td>nominee-id</td>
@@ -5367,7 +5367,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>congress</td>
-<td>107-114</td>
+<td>107-115</td>
 </tr>
 <tr>
 <td>state</td>
@@ -6637,7 +6637,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>congress</td>
-<td>110-114</td>
+<td>110-115</td>
 </tr>
 <tr>
 <td>chamber</td>
@@ -6653,7 +6653,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>The ProPublica Congress API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -6663,39 +6663,19 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
+<td>Bad Request &ndash; Your request is improperly formed</td>
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
+<td>Forbidden &ndash; Your request did not include an authorization header</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
+<td>Not Found &ndash; The specified record(s) could not be found</td>
 </tr>
 <tr>
 <td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
+<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json or xml</td>
 </tr>
 <tr>
 <td>500</td>
@@ -6703,7 +6683,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </tr>
 <tr>
 <td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
+<td>Service Unavailable &ndash; The service is currently not working. Please try again later.</td>
 </tr>
 </tbody></table>
 
