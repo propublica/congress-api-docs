@@ -1,5 +1,31 @@
 ## Congress API changelog
 
+
+#### 2017-07-19
+
+* Added full text search for bills.
+* Better null value display for bills and members. ([Issue 36](https://github.com/propublica/congress-api-docs/issues/36))
+* Added first, middle and last name attributes to Get Current Members by State/District responses.
+
+#### 2017-07-14
+
+* Added `has_bills` and `has_statements` to subjects responses
+* Added sponsor details to bill lists responses
+* Made boolean responses for member#in_office and bill#active actual JSON booleans.
+
+#### 2017-07-13
+
+* Bill detail responses now contain complete summary if available.
+
+#### 2017-07-10
+
+* Added `url` to committee detail responses
+
+#### 2017-06-21
+
+* Added `chamber` and `action_type` to bill actions responses.
+* Added `committee_codes` and `subcommittee_codes` to bill detail responses.
+
 #### 2017-06-14
 
 * Added `enacted` and `vetoed` as types for recent bills responses. ([Issue 18](https://github.com/propublica/congress-api-docs/issues/18))
