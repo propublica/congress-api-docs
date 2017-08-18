@@ -1,6 +1,29 @@
 ## Congress API changelog
 
 
+#### 2017-08-18
+
+* Allow `both` as a value for vote date range requests. ([Issue 95](https://github.com/propublica/congress-api-docs/issues/95))
+
+#### 2017-08-15
+
+* Fixed `source` and `url` attributes of Senate votes to use https: ([Issue 91](https://github.com/propublica/congress-api-docs/issues/91))
+* Added member details to vote responses. ([Issue 97](https://github.com/propublica/congress-api-docs/issues/97))
+* Removed HTML encoding of member and committee names. ([Issue 84](https://github.com/propublica/congress-api-docs/issues/84) and [Issue 108](https://github.com/propublica/congress-api-docs/issues/108))
+* Added `bill_id` to member vote position responses. ([Issue 104](https://github.com/propublica/congress-api-docs/issues/104))
+
+#### 2017-07-28
+
+* Updated amendment responses.
+* Fixed Get Recent Bills for Member responses and added new fields.
+
+#### 2017-07-24
+
+* `both` chamber parameter on Get Recent Bills now applies to all responses, not just `passed`
+* Fixed full name display for members. ([Issue 70](https://github.com/propublica/congress-api-docs/issues/70))
+* Added `cosponsor_state` and `cosponsor_party` to bill cosponsors response. ([Issue 69](https://github.com/propublica/congress-api-docs/issues/69))
+
+
 #### 2017-07-19
 
 * Added full text search for bills.
