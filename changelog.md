@@ -1,5 +1,23 @@
 ## Congress API changelog
 
+#### 2017-08-22
+
+* Added response for subcommittee detail. ([Issue 121](https://github.com/propublica/congress-api-docs/issues/121))
+* Removed HTML encoding in bill actions. ([Issue 122](https://github.com/propublica/congress-api-docs/issues/122))
+* Included `side` attribute in committee memberships. ([Issue 119](https://github.com/propublica/congress-api-docs/issues/119))
+* Fixed empty strings on some joint committees. ([Issue 118](https://github.com/propublica/congress-api-docs/issues/118))
+* Fixed committee name attribute on committee detail response. ([Issue 115](https://github.com/propublica/congress-api-docs/issues/115))
+* Removed HTML encoding in floor update responses. ([Issue 112](https://github.com/propublica/congress-api-docs/issues/112))
+
+
+#### 2017-08-21
+
+* Make `rank_in_party` on committee detail responses an integer. ([Issue 120](https://github.com/propublica/congress-api-docs/issues/120))
+* Added committee `id` to committee detail responses. ([Issue 117](https://github.com/propublica/congress-api-docs/issues/117))
+* Replaced empty strings on committee responses. ([Issue 118](https://github.com/propublica/congress-api-docs/issues/118))
+* Added `chamber` to each committee on committee list responses. ([Issue 113](https://github.com/propublica/congress-api-docs/issues/113))
+* Added `chair_state`, `chair_party` and `chair` attributes to committee detail responses. ([Issue 114](https://github.com/propublica/congress-api-docs/issues/114))
+
 
 #### 2017-08-18
 
