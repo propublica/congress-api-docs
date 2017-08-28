@@ -1,5 +1,18 @@
 ## Congress API changelog
 
+
+#### 2017-08-28
+
+* Added sponsor details to related_bills responses.
+* Fixed vote detail responses for elections of Speaker of the House. ([Issue 102](https://github.com/propublica/congress-api-docs/issues/102))
+* Added `amendment` element to vote detail responses. ([Issue 96](https://github.com/propublica/congress-api-docs/issues/96))
+* Removed HTML encoding from bill subjects responses. ([Issue 130](https://github.com/propublica/congress-api-docs/issues/130))
+* Added `subcommittees` element to member detail responses. ([Issue 126](https://github.com/propublica/congress-api-docs/issues/126))
+
+#### 2017-08-23
+
+* Presidential bill actions no longer have a `chamber` value. ([Issue 123](https://github.com/propublica/congress-api-docs/issues/123))
+
 #### 2017-08-22
 
 * Added response for subcommittee detail. ([Issue 121](https://github.com/propublica/congress-api-docs/issues/121))
