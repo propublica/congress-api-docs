@@ -1,5 +1,10 @@
 ## Congress API changelog
 
+#### 2017-09-05
+
+* Added upcoming bills responses. ([See Docs](https://projects.propublica.org/api-docs/congress-api/bills/#get-upcoming-bills))
+* Member position response now supports offset parameter. ([Issue 147](https://github.com/propublica/congress-api-docs/issues/147))
+* Added `chamber` to committee members. ([Issue 140](https://github.com/propublica/congress-api-docs/issues/140))
 
 #### 2017-08-28
 
