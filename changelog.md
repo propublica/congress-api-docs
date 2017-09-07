@@ -1,5 +1,18 @@
 ## Congress API changelog
 
+
+#### 2017-09-07
+
+* Fixed unescaped quote marks in related bills responses. ([Issue 149](https://github.com/propublica/congress-api-docs/issues/149) and [Issue 150](https://github.com/propublica/congress-api-docs/issues/150))
+* Removed `domain` from member responses. ([Issue 145](https://github.com/propublica/congress-api-docs/issues/145))
+* Fixed bug that permitted committee API requests to use the wrong chamber ([Issue 139](https://github.com/propublica/congress-api-docs/issues/139))
+
+#### 2017-09-06
+
+* Fixed unescaped quote marks in floor update responses. ([Issue 146](https://github.com/propublica/congress-api-docs/issues/146))
+* Fixed Senate subcommittees bug affecting committee responses. ([Issue 144](https://github.com/propublica/congress-api-docs/issues/144))
+
+
 #### 2017-09-05
 
 * Added upcoming bills responses. ([See Docs](https://projects.propublica.org/api-docs/congress-api/bills/#get-upcoming-bills))
