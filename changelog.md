@@ -5,7 +5,8 @@
 
 * Fixed unescaped quote marks in related bills responses. ([Issue 149](https://github.com/propublica/congress-api-docs/issues/149) and [Issue 150](https://github.com/propublica/congress-api-docs/issues/150))
 * Removed `domain` from member responses. ([Issue 145](https://github.com/propublica/congress-api-docs/issues/145))
-* Fixed bug that permitted committee API requests to use the wrong chamber ([Issue 139](https://github.com/propublica/congress-api-docs/issues/139))
+* Fixed bug that permitted committee API requests to use the wrong chamber. ([Issue 139](https://github.com/propublica/congress-api-docs/issues/139))
+* Fixed `rank_in_party` for joint committees. ([Issue 142](https://github.com/propublica/congress-api-docs/issues/142) and [Issue 141](https://github.com/propublica/congress-api-docs/issues/141))
 
 #### 2017-09-06
 
