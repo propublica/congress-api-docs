@@ -1,5 +1,10 @@
 ## Congress API changelog
 
+#### 2017-09-11
+
+* Added `bill_ids` to Committee Hearing responses. ([Issue 151](https://github.com/propublica/congress-api-docs/issues/151))
+* Added `url` to former members elements in committee responses with link to Congressional Record section describing resignation.
+* Added `parent_committee_id` to subcommittee objects on member responses. ([Issue 126](https://github.com/propublica/congress-api-docs/issues/126)) 
 
 #### 2017-09-07
 
