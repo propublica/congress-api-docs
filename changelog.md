@@ -1,5 +1,10 @@
 ## Congress API changelog
 
+#### 2017-09-29
+
+* Added `short_title` to member responses ([Issue 155](https://github.com/propublica/congress-api-docs/issues/155))
+* Statement search now supports full text search.
+
 #### 2017-09-21
 
 * Added `bill_ids` to Floor Action responses. ([Issue 153](https://github.com/propublica/congress-api-docs/issues/153))
