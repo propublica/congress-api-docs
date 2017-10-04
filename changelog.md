@@ -1,5 +1,9 @@
 ## Congress API changelog
 
+#### 2017-10-04
+
+* Added `side` and `title` to committee and subcommittee portions of member detail responses for 115th Congress. ([Issue 160](https://github.com/propublica/congress-api-docs/issues/160))
+
 #### 2017-09-29
 
 * Added `short_title` to member responses ([Issue 155](https://github.com/propublica/congress-api-docs/issues/155))
