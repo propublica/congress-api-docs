@@ -5,6 +5,7 @@
 * Added `fec_candidate_id` to member list responses. ([Issue 165](https://github.com/propublica/congress-api-docs/issues/165))
 * Added `cosponsors_by_party` to bills list and detail responses. ([Issue 163](https://github.com/propublica/congress-api-docs/issues/163))
 * For votes by date responses and votes by member responses in which there is no bill in our database, still display some `bill` attributes like we do on vote detail responses.
+* Added `sponsor_id` to bill attributes in votes responses. ([Issue 168](https://github.com/propublica/congress-api-docs/issues/168))
 
 #### 2017-10-04
 
