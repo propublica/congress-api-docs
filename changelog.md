@@ -1,5 +1,13 @@
 ## Congress API changelog
 
+#### 2017-10-18
+
+* Fixed vote responses to remove nomination details from `bill` attribute. ([Issue 171](https://github.com/propublica/congress-api-docs/issues/171))
+
+#### 2017-10-17
+
+* On statement search, `num_results` now represents the total number of search results (aids in pagination).
+
 #### 2017-10-12
 
 * Added `fec_candidate_id` to member list responses. ([Issue 165](https://github.com/propublica/congress-api-docs/issues/165))
