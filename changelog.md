@@ -3,6 +3,8 @@
 #### 2017-10-18
 
 * Fixed vote responses to remove nomination details from `bill` attribute. ([Issue 171](https://github.com/propublica/congress-api-docs/issues/171))
+* Fixed bill loader to always load both official and short titles.
+* Added `sponsors_by_party` and `short_title` to Get Recent Bills by a Specific Member response. ([Issue 163](https://github.com/propublica/congress-api-docs/issues/163))
 
 #### 2017-10-17
 
