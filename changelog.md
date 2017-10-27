@@ -1,5 +1,12 @@
 ## Congress API changelog
 
+#### 2017-10-27
+
+* Fixed `num_results` on statements by member responses.
+* Fixed a bug with bill search JSON responses.
+* Removed HTML encoding from committeee & subcommittee member names and also bill sponsor names. ([Issue 108](https://github.com/propublica/congress-api-docs/issues/108))
+* Fixed an issue with the bill schedule loader.
+
 #### 2017-10-18
 
 * Fixed vote responses to remove nomination details from `bill` attribute. ([Issue 171](https://github.com/propublica/congress-api-docs/issues/171))
