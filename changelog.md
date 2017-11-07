@@ -1,5 +1,10 @@
 ## Congress API changelog
 
+#### 2017-11-07
+
+* Added `last_vote` to bill responses. ([Issue 177](https://github.com/propublica/congress-api-docs/issues/177))
+* Made most bill responses (related bills, subject bills and cosponsored bills) match bill list responses. (Related to #177)
+
 #### 2017-10-27
 
 * Fixed `num_results` on statements by member responses.
