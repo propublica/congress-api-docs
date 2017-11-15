@@ -1,5 +1,9 @@
 ## Congress API changelog
 
+#### 2017-11-15
+
+* Fixed quote-escaping issue with `latest_major_action` in some bill responses.
+
 #### 2017-11-07
 
 * Added `last_vote` to bill responses. ([Issue 177](https://github.com/propublica/congress-api-docs/issues/177))
