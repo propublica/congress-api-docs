@@ -1,5 +1,9 @@
 ## Congress API changelog
 
+#### 2017-11-27
+
+* Fixed bug with displaying At-large districts. ([Issue 181](https://github.com/propublica/congress-api-docs/issues/181))
+
 #### 2017-11-15
 
 * Fixed quote-escaping issue with `latest_major_action` in some bill responses.
