@@ -1,5 +1,9 @@
 ## Congress API changelog
 
+#### 2017-11-29
+
+* Added `suffix` attribute to member responses. ([Issue 180](https://github.com/propublica/congress-api-docs/issues/180))
+
 #### 2017-11-27
 
 * Fixed bug with displaying At-large districts. ([Issue 181](https://github.com/propublica/congress-api-docs/issues/181))
