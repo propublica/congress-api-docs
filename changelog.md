@@ -1,5 +1,11 @@
 ## Congress API changelog
 
+#### 2017-12-02
+
+* Fixed `num_results` value on Get Recent Committee Hearings responses to show total number of hearings for the given congress.
+* Fixed `num_results` value on bills by subject response to show total number of bills for the given subject.
+* Fixed `enacted` date on bill responses and updated dates for 115th Congress bills. ([Issue 89](https://github.com/propublica/congress-api-docs/issues/89))
+
 #### 2017-11-29
 
 * Added `suffix` attribute to member responses. ([Issue 180](https://github.com/propublica/congress-api-docs/issues/180))
