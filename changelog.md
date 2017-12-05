@@ -1,5 +1,9 @@
 ## Congress API changelog
 
+#### 2017-12-05
+
+* Fixed a bug with House Speaker election votes in Specific Member's Vote Positions responses.
+
 #### 2017-12-02
 
 * Fixed `num_results` value on Get Recent Committee Hearings responses to show total number of hearings for the given congress.
