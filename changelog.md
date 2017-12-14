@@ -1,5 +1,9 @@
 ## Congress API changelog
 
+#### 2017-12-13
+
+* All `not_voting` attributes on JSON Get a Specific Roll Call Vote endpoints return integers instead of strings.
+
 #### 2017-12-05
 
 * Fixed a bug with House Speaker election votes in Specific Member's Vote Positions responses.
