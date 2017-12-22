@@ -1,5 +1,9 @@
 ## Congress API changelog
 
+#### 2017-12-22
+
+* Added more personal explanation endpoints, including responses for individual members and votes, and by category (docs [here](https://projects.propublica.org/api-docs/congress-api/votes/#personal-explanations)).
+
 #### 2017-12-13
 
 * All `not_voting` attributes on JSON Get a Specific Roll Call Vote endpoints return integers instead of strings.
