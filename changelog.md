@@ -1,5 +1,10 @@
 ## Congress API changelog
 
+#### 2018-02-02
+
+* Fixed bug that resulted in list of committees requests not working for 113th and 114th congresses. ([Issue 189](https://github.com/propublica/congress-api-docs/issues/189))
+* Fixed bug that resulted in committees not displaying as part of member detail XML responses. ([Issue 190](https://github.com/propublica/congress-api-docs/issues/190))
+
 #### 2017-12-22
 
 * Added more personal explanation endpoints, including responses for individual members and votes, and by category (docs [here](https://projects.propublica.org/api-docs/congress-api/votes/#personal-explanations)).
