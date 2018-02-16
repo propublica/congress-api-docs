@@ -1,5 +1,15 @@
 ## Congress API changelog
 
+#### 2018-02-16
+
+* Updated documentation to specify proper syntax for current member by district response for at-large districts. ([Issue 196](https://github.com/propublica/congress-api-docs/issues/196))
+* Updated chair and ranking member information for current committees. ([Issue 193](https://github.com/propublica/congress-api-docs/issues/193))
+* Added data for congressional committees for 113th and 114th congresses. ([Issue 189](https://github.com/propublica/congress-api-docs/issues/189))
+
+#### 2018-02-06
+
+* Fixed several issues impacting votes by date responses and some individual vote responses. ([Issue 192](https://github.com/propublica/congress-api-docs/issues/192))
+
 #### 2018-02-02
 
 * Fixed bug that resulted in list of committees requests not working for 113th and 114th congresses. ([Issue 189](https://github.com/propublica/congress-api-docs/issues/189))
