@@ -1,5 +1,13 @@
 ## Congress API changelog
 
+#### 2018-03-15
+
+* Added `gender` to member list responses. ([Issue 195](https://github.com/propublica/congress-api-docs/issues/195))
+
+#### 2018-03-12
+
+* Fixed invalid JSON bug in hearings response. ([Issue 200](https://github.com/propublica/congress-api-docs/issues/200))
+
 #### 2018-02-16
 
 * Updated documentation to specify proper syntax for current member by district response for at-large districts. ([Issue 196](https://github.com/propublica/congress-api-docs/issues/196))
