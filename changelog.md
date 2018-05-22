@@ -1,5 +1,9 @@
 ## Congress API changelog
 
+#### 2018-05-22
+
+* Added response for statements that mention a specific bill. ([Issue 205](https://github.com/propublica/congress-api-docs/issues/205)
+
 #### 2018-03-15
 
 * Added `gender` to member list responses. ([Issue 195](https://github.com/propublica/congress-api-docs/issues/195))
