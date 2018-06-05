@@ -1,5 +1,9 @@
 ## Congress API changelog
 
+#### 2018-06-05
+
+* Added lobbying responses. ([Issue 207](https://github.com/propublica/congress-api-docs/issues/207))
+
 #### 2018-05-22
 
 * Added response for statements that mention a specific bill. ([Issue 205](https://github.com/propublica/congress-api-docs/issues/205))
