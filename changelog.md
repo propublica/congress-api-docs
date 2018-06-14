@@ -1,5 +1,9 @@
 ## Congress API changelog
 
+#### 2018-06-14
+
+* Added `last_updated` attribute to list of members and member detail responses.
+
 #### 2018-06-05
 
 * Added lobbying responses. ([Issue 207](https://github.com/propublica/congress-api-docs/issues/207))
