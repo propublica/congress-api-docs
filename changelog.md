@@ -1,5 +1,9 @@
 ## Congress API changelog
 
+#### 2018-07-09
+
+* Fixed DW-Nominate score loader.
+
 #### 2018-06-14
 
 * Added `last_updated` attribute to list of members and member detail responses.
